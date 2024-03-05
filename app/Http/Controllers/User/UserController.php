@@ -11,4 +11,15 @@ class UserController extends Controller
 
     public function __construct(protected UserService $userService){       }
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function index()
+    {
+        $list = $this->userService->list();
+        return view('welcome',compact('list'));
+    }
+
 }
